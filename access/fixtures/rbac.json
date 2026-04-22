@@ -1,0 +1,23 @@
+[
+  {"model": "access.role", "pk": 1, "fields": {"name": "admin"}},
+  {"model": "access.role", "pk": 2, "fields": {"name": "user"}},
+
+  {"model": "access.resource", "pk": 1, "fields": {"name": "accounts"}},
+  {"model": "access.resource", "pk": 2, "fields": {"name": "tasks"}},
+
+  {"model": "access.action", "pk": 1, "fields": {"name": "read"}},
+  {"model": "access.action", "pk": 2, "fields": {"name": "write"}},
+  {"model": "access.action", "pk": 3, "fields": {"name": "delete"}},
+
+  {"model": "access.permission", "pk": 1, "fields": {"resource": 1, "action": 1}},
+  {"model": "access.permission", "pk": 2, "fields": {"resource": 1, "action": 3}},
+  {"model": "access.permission", "pk": 3, "fields": {"resource": 2, "action": 1}},
+  {"model": "access.permission", "pk": 4, "fields": {"resource": 2, "action": 2}},
+
+  {"model": "access.rolepermission", "pk": 1, "fields": {"role": 1, "permission": 1}},
+  {"model": "access.rolepermission", "pk": 2, "fields": {"role": 1, "permission": 2}},
+  {"model": "access.rolepermission", "pk": 3, "fields": {"role": 1, "permission": 3}},
+  {"model": "access.rolepermission", "pk": 4, "fields": {"role": 1, "permission": 4}},
+
+  {"model": "access.rolepermission", "pk": 5, "fields": {"role": 2, "permission": 1}}
+]
