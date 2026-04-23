@@ -8,16 +8,38 @@ class UserCreator(BaseUserManager):
         if not email:
             raise ValueError("поле email обязательно для создания пользователя")
 
-        email = self.normalize_email(email)                 
-        user = self.model(email=email, **extra_fields)      
-        user.set_password(password)                          
-        user.save(using=self._db)                           
-        return user                                         
-    
-    def create_superuser(self, email, password=None, **extra_fields):   
-        extra_fields.setdefault("is_staff", True)           
-        extra_fields.setdefault("is_superuser", True)                
-        return self.create_user(email, password, **extra_fields)
+        email = self.normalize_email(email)
+        user = self.model(email=email, **extra_fields)
+        user.set_password(password)
+        user.save(using=self._db)
+
+        # Автоматическое назначение роли user
+        from access.models import Role, UserRole
+        try:
+            role = Role.objects.get(name="user")
+            UserRole.objects.get_or_create(user=user, role=role)
+        except Role.DoesNotExist:
+            # Если init_rbac ещё не запускали — просто пропускаем
+            pass
+
+        return user
+
+    def create_superuser(self, email, password=None, **extra_fields):
+        extra_fields.setdefault("is_staff", True)
+        extra_fields.setdefault("is_superuser", True)
+
+        user = self.create_user(email, password, **extra_fields)
+
+        # Автоматическое назначение роли admin
+        from access.models import Role, UserRole
+        try:
+            role = Role.objects.get(name="admin")
+            UserRole.objects.get_or_create(user=user, role=role)
+        except Role.DoesNotExist:
+            pass
+
+        return user
+
     
 
 class User(AbstractBaseUser, PermissionsMixin):

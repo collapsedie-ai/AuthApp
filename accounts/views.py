@@ -43,12 +43,16 @@ class LoginView(APIView):
 
 @csrf_exempt
 def me_view(request):
-    print("VIEW USER BEFORE:", request.user)
+
+    if request.user.is_anonymous:
+        return JsonResponse({"error": "Необходим токен"}, status=401)
+
+    from access.utils import has_permission
+    ok, code = has_permission(request.user, "accounts", "read")
+    if not ok:
+        return JsonResponse({"detail": "Forbidden"}, status=code)
 
     user = request.user
-
-    if user.is_anonymous:
-        return JsonResponse({"error": "Необходим токен"}, status=401)
 
     return JsonResponse({
         "id": user.id,
@@ -63,15 +67,19 @@ def me_view(request):
 
 @csrf_exempt
 def logout_view(request):
-    print("LOGOUT VIEW USER:", request.user)
+
+    if request.user.is_anonymous:
+        return JsonResponse({"error": "Необходим токен"}, status=401)
+
+    from access.utils import has_permission
+    ok, code = has_permission(request.user, "accounts", "write")
+    if not ok:
+        return JsonResponse({"detail": "Forbidden"}, status=code)
 
     if request.method != "POST":
         return JsonResponse({"error": "Метод не разрешён"}, status=405)
 
     user = request.user
-
-    if user.is_anonymous:
-        return JsonResponse({"error": "Необходим токен"}, status=401)
 
     auth_header = request.headers.get("Authorization")
     if not auth_header:
@@ -96,53 +104,72 @@ def logout_view(request):
 
 
 
+
+
 @csrf_exempt
 def logout_all_view(request):
+
+
+    if request.user.is_anonymous:
+        return JsonResponse({"error": "Необходим токен"}, status=401)
+
+  
+    from access.utils import has_permission
+    ok, code = has_permission(request.user, "accounts", "write")
+    if not ok:
+        return JsonResponse({"detail": "Forbidden"}, status=code)
+
+
     if request.method != "POST":
         return JsonResponse({"error": "Метод не разрешён"}, status=405)
 
     user = request.user
-    print("LOGOUT ALL USER:", user)
-
-    if user.is_anonymous:
-        return JsonResponse({"error": "Необходим токен"}, status=401)
 
     AuthToken.objects.filter(user=user, is_active=True).update(is_active=False)
 
     return JsonResponse({"message": "Вы вышли из всех устройств"})
 
+
+
 @csrf_exempt
 def delete_account_view(request):
-    print("VIEW USER BEFORE:", request.user)
 
-    user = request.user
-
-    if user.is_anonymous:
+    if request.user.is_anonymous:
         return JsonResponse({"error": "Необходим токен"}, status=401)
+
+    from access.utils import has_permission
+    ok, code = has_permission(request.user, "accounts", "delete")
+    if not ok:
+        return JsonResponse({"detail": "Forbidden"}, status=code)
+
 
     if request.method != "DELETE":
         return JsonResponse({"error": "Метод не разрешён"}, status=405)
 
-    # Мягкое удаление
+    user = request.user
     user.is_active = False
     user.save()
 
-    # Деактивируем все токены
-    from .models import AuthToken
     AuthToken.objects.filter(user=user, is_active=True).update(is_active=False)
 
     return JsonResponse({"message": "Аккаунт деактивирован"}, status=200)
+
+
 
     
 
 @csrf_exempt
 def update_profile_view(request):
-    print("VIEW USER BEFORE:", request.user)
 
-    user = request.user
 
-    if user.is_anonymous:
+    if request.user.is_anonymous:
         return JsonResponse({"error": "Необходим токен"}, status=401)
+
+
+    from access.utils import has_permission
+    ok, code = has_permission(request.user, "accounts", "write")
+    if not ok:
+        return JsonResponse({"detail": "Forbidden"}, status=code)
 
     if request.method != "PUT":
         return JsonResponse({"error": "Метод не разрешён"}, status=405)
@@ -152,7 +179,7 @@ def update_profile_view(request):
     except:
         return JsonResponse({"error": "Неверный JSON"}, status=400)
 
-
+    user = request.user
     user.first_name = data.get("first_name", user.first_name)
     user.last_name = data.get("last_name", user.last_name)
     user.middle_name = data.get("middle_name", user.middle_name)
@@ -166,5 +193,6 @@ def update_profile_view(request):
         "last_name": user.last_name,
         "middle_name": user.middle_name,
     })
+
 
 
