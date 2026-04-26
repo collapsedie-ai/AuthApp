@@ -1,0 +1,1107 @@
+[
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "accounts",
+        "model": "authtoken"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "accounts",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "access",
+        "model": "action"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "access",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "access",
+        "model": "resource"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "access",
+        "model": "role"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "access",
+        "model": "rolepermission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "access",
+        "model": "userrole"
+    }
+},
+{
+    "model": "access.role",
+    "pk": 1,
+    "fields": {
+        "name": "admin"
+    }
+},
+{
+    "model": "access.role",
+    "pk": 2,
+    "fields": {
+        "name": "user"
+    }
+},
+{
+    "model": "access.resource",
+    "pk": 1,
+    "fields": {
+        "name": "accounts"
+    }
+},
+{
+    "model": "access.resource",
+    "pk": 2,
+    "fields": {
+        "name": "tasks"
+    }
+},
+{
+    "model": "access.action",
+    "pk": 1,
+    "fields": {
+        "name": "read"
+    }
+},
+{
+    "model": "access.action",
+    "pk": 2,
+    "fields": {
+        "name": "write"
+    }
+},
+{
+    "model": "access.action",
+    "pk": 3,
+    "fields": {
+        "name": "delete"
+    }
+},
+{
+    "model": "access.action",
+    "pk": 4,
+    "fields": {
+        "name": "logout"
+    }
+},
+{
+    "model": "access.permission",
+    "pk": 1,
+    "fields": {
+        "resource": 1,
+        "action": 1
+    }
+},
+{
+    "model": "access.permission",
+    "pk": 2,
+    "fields": {
+        "resource": 1,
+        "action": 3
+    }
+},
+{
+    "model": "access.permission",
+    "pk": 3,
+    "fields": {
+        "resource": 2,
+        "action": 1
+    }
+},
+{
+    "model": "access.permission",
+    "pk": 4,
+    "fields": {
+        "resource": 2,
+        "action": 2
+    }
+},
+{
+    "model": "access.permission",
+    "pk": 5,
+    "fields": {
+        "resource": 2,
+        "action": 3
+    }
+},
+{
+    "model": "access.permission",
+    "pk": 6,
+    "fields": {
+        "resource": 1,
+        "action": 2
+    }
+},
+{
+    "model": "access.permission",
+    "pk": 7,
+    "fields": {
+        "resource": 1,
+        "action": 4
+    }
+},
+{
+    "model": "access.rolepermission",
+    "pk": 1,
+    "fields": {
+        "role": 1,
+        "permission": 1
+    }
+},
+{
+    "model": "access.rolepermission",
+    "pk": 2,
+    "fields": {
+        "role": 1,
+        "permission": 2
+    }
+},
+{
+    "model": "access.rolepermission",
+    "pk": 3,
+    "fields": {
+        "role": 1,
+        "permission": 3
+    }
+},
+{
+    "model": "access.rolepermission",
+    "pk": 4,
+    "fields": {
+        "role": 1,
+        "permission": 4
+    }
+},
+{
+    "model": "access.rolepermission",
+    "pk": 5,
+    "fields": {
+        "role": 2,
+        "permission": 1
+    }
+},
+{
+    "model": "access.rolepermission",
+    "pk": 6,
+    "fields": {
+        "role": 1,
+        "permission": 5
+    }
+},
+{
+    "model": "access.rolepermission",
+    "pk": 7,
+    "fields": {
+        "role": 1,
+        "permission": 6
+    }
+},
+{
+    "model": "access.rolepermission",
+    "pk": 8,
+    "fields": {
+        "role": 1,
+        "permission": 7
+    }
+},
+{
+    "model": "access.rolepermission",
+    "pk": 9,
+    "fields": {
+        "role": 2,
+        "permission": 7
+    }
+},
+{
+    "model": "access.rolepermission",
+    "pk": 10,
+    "fields": {
+        "role": 2,
+        "permission": 3
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add user",
+        "content_type": [
+            "accounts",
+            "user"
+        ],
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change user",
+        "content_type": [
+            "accounts",
+            "user"
+        ],
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete user",
+        "content_type": [
+            "accounts",
+            "user"
+        ],
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view user",
+        "content_type": [
+            "accounts",
+            "user"
+        ],
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add auth token",
+        "content_type": [
+            "accounts",
+            "authtoken"
+        ],
+        "codename": "add_authtoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change auth token",
+        "content_type": [
+            "accounts",
+            "authtoken"
+        ],
+        "codename": "change_authtoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete auth token",
+        "content_type": [
+            "accounts",
+            "authtoken"
+        ],
+        "codename": "delete_authtoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view auth token",
+        "content_type": [
+            "accounts",
+            "authtoken"
+        ],
+        "codename": "view_authtoken"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add user role",
+        "content_type": [
+            "access",
+            "userrole"
+        ],
+        "codename": "add_userrole"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change user role",
+        "content_type": [
+            "access",
+            "userrole"
+        ],
+        "codename": "change_userrole"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete user role",
+        "content_type": [
+            "access",
+            "userrole"
+        ],
+        "codename": "delete_userrole"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view user role",
+        "content_type": [
+            "access",
+            "userrole"
+        ],
+        "codename": "view_userrole"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add action",
+        "content_type": [
+            "access",
+            "action"
+        ],
+        "codename": "add_action"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change action",
+        "content_type": [
+            "access",
+            "action"
+        ],
+        "codename": "change_action"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete action",
+        "content_type": [
+            "access",
+            "action"
+        ],
+        "codename": "delete_action"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view action",
+        "content_type": [
+            "access",
+            "action"
+        ],
+        "codename": "view_action"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add resource",
+        "content_type": [
+            "access",
+            "resource"
+        ],
+        "codename": "add_resource"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change resource",
+        "content_type": [
+            "access",
+            "resource"
+        ],
+        "codename": "change_resource"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete resource",
+        "content_type": [
+            "access",
+            "resource"
+        ],
+        "codename": "delete_resource"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view resource",
+        "content_type": [
+            "access",
+            "resource"
+        ],
+        "codename": "view_resource"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add role",
+        "content_type": [
+            "access",
+            "role"
+        ],
+        "codename": "add_role"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change role",
+        "content_type": [
+            "access",
+            "role"
+        ],
+        "codename": "change_role"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete role",
+        "content_type": [
+            "access",
+            "role"
+        ],
+        "codename": "delete_role"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view role",
+        "content_type": [
+            "access",
+            "role"
+        ],
+        "codename": "view_role"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add permission",
+        "content_type": [
+            "access",
+            "permission"
+        ],
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change permission",
+        "content_type": [
+            "access",
+            "permission"
+        ],
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": [
+            "access",
+            "permission"
+        ],
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view permission",
+        "content_type": [
+            "access",
+            "permission"
+        ],
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add role permission",
+        "content_type": [
+            "access",
+            "rolepermission"
+        ],
+        "codename": "add_rolepermission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change role permission",
+        "content_type": [
+            "access",
+            "rolepermission"
+        ],
+        "codename": "change_rolepermission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete role permission",
+        "content_type": [
+            "access",
+            "rolepermission"
+        ],
+        "codename": "delete_rolepermission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view role permission",
+        "content_type": [
+            "access",
+            "rolepermission"
+        ],
+        "codename": "view_rolepermission"
+    }
+},
+{
+    "model": "accounts.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$3gD5A8PoEJcBBW4ye5uGTV$Rje0G7H7SIuHduhzIwQOTap9uiiEd8OyGrlj4jBs3t4=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "╚трэ",
+        "last_name": "╚трэют",
+        "middle_name": "╚трэютшў",
+        "email": "ivan@example.com",
+        "is_active": true,
+        "is_staff": false,
+        "created_at": "2026-04-21T02:19:41.234Z",
+        "updated_at": "2026-04-21T02:19:41.234Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$AukZqEAqmz7xX8BVcZumBe$KCHgKH1OEFGfXdemDPmvL3B6YVdUwE063N881+zs7Aw=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "Ivan",
+        "last_name": "Petrov",
+        "middle_name": "Sergeevich",
+        "email": "newuser@example.com",
+        "is_active": false,
+        "is_staff": false,
+        "created_at": "2026-04-21T19:20:54.623Z",
+        "updated_at": "2026-04-21T20:06:24.699Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$Z8nViqWol3lkGbhvlftbe9$bZC6E7TMaXo5sZAT72la3SKKs2dPg69OKQGPQyGIJec=",
+        "last_login": null,
+        "is_superuser": true,
+        "first_name": "Admin2",
+        "last_name": "Test",
+        "middle_name": null,
+        "email": "admin@test.com",
+        "is_active": true,
+        "is_staff": true,
+        "created_at": "2026-04-23T12:16:35.073Z",
+        "updated_at": "2026-04-23T13:00:32.689Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$xfbW0IMEOIwonsKD6Ldfyz$WFYPDyVu3bHuODNeac6olcyc5DErT4sBN2Nkzps3NT0=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "User",
+        "last_name": "Test",
+        "middle_name": "",
+        "email": "user1@test.com",
+        "is_active": true,
+        "is_staff": false,
+        "created_at": "2026-04-23T13:17:56.984Z",
+        "updated_at": "2026-04-23T13:17:56.984Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$sPbzQZOzw2skhKbqhWwfiP$P6wgjIEOYzAsMaab6q6NSFZzj2JLnVTDd6q8zjhBHpM=",
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "╚трэ",
+        "last_name": "╚трэют",
+        "middle_name": "╚трэютшў",
+        "email": "ivan22@example.com",
+        "is_active": true,
+        "is_staff": false,
+        "created_at": "2026-04-24T05:49:17.293Z",
+        "updated_at": "2026-04-24T05:49:17.293Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.authtoken",
+    "pk": 1,
+    "fields": {
+        "key": "892b7f9620494ce8b37de2f5bd5df19b",
+        "user": [
+            "ivan@example.com"
+        ],
+        "created_at": "2026-04-21T03:54:36.067Z",
+        "is_active": false
+    }
+},
+{
+    "model": "accounts.authtoken",
+    "pk": 2,
+    "fields": {
+        "key": "5ecebabb03224783a407924e697ce920",
+        "user": [
+            "ivan@example.com"
+        ],
+        "created_at": "2026-04-21T12:10:59.872Z",
+        "is_active": false
+    }
+},
+{
+    "model": "accounts.authtoken",
+    "pk": 3,
+    "fields": {
+        "key": "6a73711ef3ad40fc9e7c95395a53df8d",
+        "user": [
+            "newuser@example.com"
+        ],
+        "created_at": "2026-04-21T19:21:27.088Z",
+        "is_active": false
+    }
+},
+{
+    "model": "accounts.authtoken",
+    "pk": 4,
+    "fields": {
+        "key": "f14ac7b75a3c48bc9dc52765ca9dcaf4",
+        "user": [
+            "newuser@example.com"
+        ],
+        "created_at": "2026-04-21T19:25:18.433Z",
+        "is_active": false
+    }
+},
+{
+    "model": "accounts.authtoken",
+    "pk": 5,
+    "fields": {
+        "key": "b1814aa1fdab4701bc19653727a1397b",
+        "user": [
+            "admin@test.com"
+        ],
+        "created_at": "2026-04-23T12:18:25.873Z",
+        "is_active": false
+    }
+},
+{
+    "model": "accounts.authtoken",
+    "pk": 6,
+    "fields": {
+        "key": "818034cb23e14021834b65ecb3d1128b",
+        "user": [
+            "admin@test.com"
+        ],
+        "created_at": "2026-04-23T13:06:44.891Z",
+        "is_active": true
+    }
+},
+{
+    "model": "accounts.authtoken",
+    "pk": 7,
+    "fields": {
+        "key": "e69ee8dad5c646bb830e4a4ef812fbd1",
+        "user": [
+            "user1@test.com"
+        ],
+        "created_at": "2026-04-23T13:18:24.785Z",
+        "is_active": true
+    }
+},
+{
+    "model": "accounts.authtoken",
+    "pk": 8,
+    "fields": {
+        "key": "50b44891cf4744c6b59b95a1e8013597",
+        "user": [
+            "ivan22@example.com"
+        ],
+        "created_at": "2026-04-24T05:49:31.349Z",
+        "is_active": true
+    }
+},
+{
+    "model": "accounts.authtoken",
+    "pk": 9,
+    "fields": {
+        "key": "b24c9957bd0a43b9b19961534d5c5e4a",
+        "user": [
+            "ivan22@example.com"
+        ],
+        "created_at": "2026-04-24T06:06:25.607Z",
+        "is_active": true
+    }
+},
+{
+    "model": "accounts.authtoken",
+    "pk": 10,
+    "fields": {
+        "key": "e7bf773bb8474ad3910c98d52a04b471",
+        "user": [
+            "admin@test.com"
+        ],
+        "created_at": "2026-04-24T06:12:04.305Z",
+        "is_active": true
+    }
+},
+{
+    "model": "access.userrole",
+    "pk": 1,
+    "fields": {
+        "user": [
+            "ivan@example.com"
+        ],
+        "role": 1
+    }
+},
+{
+    "model": "access.userrole",
+    "pk": 2,
+    "fields": {
+        "user": [
+            "admin@test.com"
+        ],
+        "role": 1
+    }
+},
+{
+    "model": "access.userrole",
+    "pk": 3,
+    "fields": {
+        "user": [
+            "user1@test.com"
+        ],
+        "role": 2
+    }
+},
+{
+    "model": "access.userrole",
+    "pk": 4,
+    "fields": {
+        "user": [
+            "ivan22@example.com"
+        ],
+        "role": 2
+    }
+}
+]
